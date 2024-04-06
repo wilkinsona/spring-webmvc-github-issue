@@ -13,10 +13,14 @@ import java.util.UUID;
 /**
  * @author Rafał Hiszpański
  */
-public interface BaseController {
+public interface BaseController<D extends Object> {
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    void add(@RequestBody D body, BindingResult bindingResult);
+
     @PostMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    void update(@PathVariable("id") UUID id, @RequestBody Body body, BindingResult bindingResult);
+    void update(@PathVariable("id") UUID id, @RequestBody D body, BindingResult bindingResult);
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)

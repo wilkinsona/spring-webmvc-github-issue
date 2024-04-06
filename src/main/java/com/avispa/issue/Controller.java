@@ -11,7 +11,12 @@ import java.util.UUID;
  */
 @RestController
 @RequestMapping("/v1/test-document")
-public class Controller extends AbstractController {
+public class Controller extends AbstractController<Body> {
+    @Override
+    public void add(Body body, BindingResult bindingResult) {
+        // DO STH
+    }
+
     @Override
     public void update(UUID id, Body body, BindingResult bindingResult) {
         // DO STH

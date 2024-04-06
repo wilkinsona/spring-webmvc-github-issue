@@ -7,7 +7,7 @@ import java.util.UUID;
 /**
  * @author Rafał Hiszpański
  */
-public abstract class AbstractController implements BaseController {
+public abstract class AbstractController<T extends Object> implements BaseController<T> {
     @Override
     public void delete(UUID id) {
         // DO STH
