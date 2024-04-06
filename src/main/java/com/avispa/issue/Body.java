@@ -1,9 +1,12 @@
 package com.avispa.issue;
 
+import jakarta.validation.constraints.NotNull;
+
 /**
  * @author Rafał Hiszpański
  */
 public class Body {
+    @NotNull
     private String test;
 
     public String getTest() {
