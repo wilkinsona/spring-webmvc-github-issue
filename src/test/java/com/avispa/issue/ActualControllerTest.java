@@ -1,6 +1,5 @@
 package com.avispa.issue;
 
-import com.avispa.issue.a.AController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * @author Rafał Hiszpański
  */
-@WebMvcTest(AController.class)
-class AControllerTest {
+@WebMvcTest(ActualController.class)
+class ActualControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
