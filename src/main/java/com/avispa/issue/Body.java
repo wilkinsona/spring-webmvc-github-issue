@@ -1,7 +1,20 @@
 package com.avispa.issue;
 
+import com.avispa.issue.Body;
+import jakarta.validation.constraints.NotNull;
+
 /**
  * @author Rafał Hiszpański
  */
-public interface Body {
+public class Body {
+    @NotNull
+    private String test;
+
+    public String getTest() {
+        return test;
+    }
+
+    public void setTest(String test) {
+        this.test = test;
+    }
 }

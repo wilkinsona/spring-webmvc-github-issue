@@ -8,5 +8,5 @@ import java.util.UUID;
 /**
  * @author Rafał Hiszpański
  */
-public abstract class ABaseController<B extends Body> extends AAbstractController<B> {
+public abstract class ABaseController extends AAbstractController {
 }

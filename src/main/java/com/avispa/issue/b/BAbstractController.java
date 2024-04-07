@@ -8,7 +8,7 @@ import java.util.UUID;
 /**
  * @author Rafał Hiszpański
  */
-abstract class BAbstractController<B extends Body> implements Controller<B> {
+abstract class BAbstractController implements Controller {
     @Override
     public void delete(UUID id) {
         // DO STH

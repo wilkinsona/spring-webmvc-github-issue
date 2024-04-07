@@ -1,5 +1,6 @@
 package com.avispa.issue.a;
 
+import com.avispa.issue.Body;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,14 +12,14 @@ import java.util.UUID;
  */
 @RestController
 @RequestMapping("/v1/a")
-public class AController extends ABaseController<ABody> {
+public class AController extends ABaseController {
     @Override
-    public void add(ABody body, BindingResult bindingResult) {
+    public void add(Body body, BindingResult bindingResult) {
         // DO STH
     }
 
     @Override
-    public void update(UUID id, ABody body, BindingResult bindingResult) {
+    public void update(UUID id, Body body, BindingResult bindingResult) {
         // DO STH
     }
 }

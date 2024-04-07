@@ -1,7 +1,5 @@
 package com.avispa.issue;
 
-import com.avispa.issue.a.ABody;
-import com.avispa.issue.b.BBody;
 import com.avispa.issue.b.BController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -28,7 +26,7 @@ class BControllerTest {
 
     @Test
     void givenDto_whenUpdate_thenServiceCalled() throws Exception {
-        BBody body = new BBody();
+        Body body = new Body();
         body.setTest("Value");
 
         UUID id = UUID.randomUUID();

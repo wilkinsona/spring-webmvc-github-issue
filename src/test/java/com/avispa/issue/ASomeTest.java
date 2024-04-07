@@ -1,6 +1,5 @@
 package com.avispa.issue;
 
-import com.avispa.issue.a.ABody;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ class ASomeTest {
 
     @Test
     void simple() {
-        ABody body = new ABody();
+        Body body = new Body();
         body.setTest("Value");
 
         service.dosth();

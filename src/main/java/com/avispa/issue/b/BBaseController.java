@@ -5,5 +5,5 @@ import com.avispa.issue.Body;
 /**
  * @author Rafał Hiszpański
  */
-public abstract class BBaseController<B extends Body> extends BAbstractController<B> {
+public abstract class BBaseController extends BAbstractController {
 }
