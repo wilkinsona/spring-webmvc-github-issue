@@ -1,21 +1,16 @@
 package com.avispa.issue;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.context.annotation.Bean;
-import org.springframework.validation.Validator;
-import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.verify;
+import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 
 /**
  * @author Rafał Hiszpański
  */
-@SpringBootTest
 @DisplayName("A")
+@SpringJUnitWebConfig(classes = App.class)
 class SomeTest {
     @Test
     void simple() {

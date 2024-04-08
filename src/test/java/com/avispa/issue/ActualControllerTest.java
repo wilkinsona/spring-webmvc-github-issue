@@ -1,33 +1,36 @@
 package com.avispa.issue;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.UUID;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.verify;
-import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @author Rafał Hiszpański
  */
-@WebMvcTest(ActualController.class)
+@SpringJUnitWebConfig(classes = App.class)
+@TestPropertySource(properties = "a=alpha")
 class ActualControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
     @Autowired
-    private MockMvc mockMvc;
+    private WebApplicationContext context;
 
     @Test
     void givenDto_whenUpdate_thenServiceCalled() throws Exception {
+        MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
         Body body = new Body();
         body.setTest("Value");
 
@@ -41,6 +44,7 @@ class ActualControllerTest {
 
     @Test
     void whenDelete_thenServiceCalled() throws Exception {
+        MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
         UUID id = UUID.randomUUID();
 
         mockMvc.perform(MockMvcRequestBuilders.delete("/v1/a/" + id))
